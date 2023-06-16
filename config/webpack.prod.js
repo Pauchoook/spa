@@ -25,7 +25,7 @@ if (!pugPages.length) {
       },
       replace: [
         { regex: "../img", to: "img" },
-        { regex: "@img", to: "img" },
+        { regex: /@img\//g, to: "img/" },
       ],
     }),
   ];
