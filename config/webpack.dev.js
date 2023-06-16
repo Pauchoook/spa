@@ -22,7 +22,7 @@ if (!pugPages.length) {
       },
       replace: [
         { regex: '<link rel="stylesheet" href="css/style.min.css">', to: "" },
-        { regex: "@img", to: "img" },
+        { regex: /@img\//g, to: "img/" },
         { regex: "../img", to: "img" },
       ],
     }),
