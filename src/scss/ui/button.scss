@@ -6,3 +6,24 @@
   padding: 0;
   color: inherit;
 }
+
+.btn-stroke {
+  padding: 14px 30px;
+  border: 2px solid var(--beige);
+
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  text-transform: uppercase;
+  transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  @include hover {
+    background-color: var(--beige);
+  }
+  &:active {
+    border-color: var(--beige-light);
+    background-color: var(--beige-light);
+  }
+  @include laptop-min {
+    font-size: 14px;
+  }
+}
