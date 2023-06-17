@@ -1,0 +1,255 @@
+.header {
+  position: fixed;
+  padding: 16px 0px;
+  background-color: white;
+  top: 0;
+  right: 0;
+  left: 0;
+  @include mobile {
+    padding: 8px 0px;
+  }
+  &__container {
+    @include flex-between;
+  }
+  &__logo {
+    display: block;
+    width: 105px;
+    @include laptop-min {
+      width: 80px;
+    }
+    @include mobile {
+      width: 65px;
+    }
+  }
+  &__logo-img {
+    width: 100%;
+    height: auto;
+  }
+  &__right {
+    @include laptop-min {
+      display: flex;
+      align-items: center;
+      column-gap: 30px;
+    }
+  }
+  &__contacts {
+    display: flex;
+    column-gap: 40px;
+    margin-bottom: 24px;
+    justify-content: right;
+    li,
+    a {
+      display: flex;
+      align-items: center;
+      column-gap: 8px;
+      font-size: 14px;
+      line-height: 120%;
+      color: var(--text-2);
+    }
+    a {
+      transition: color 0.2s ease;
+      @include hover {
+        color: var(--beige);
+      }
+    }
+    @include desktop {
+      column-gap: 30px;
+    }
+    @include laptop {
+      column-gap: 15px;
+      li,
+      a {
+        font-size: 13px;
+      }
+    }
+    @include laptop-min {
+      column-gap: 24px;
+      margin-bottom: 0;
+      li {
+        &:first-child,
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+      li,
+      a {
+        span {
+          display: none;
+        }
+      }
+    }
+    @include mobile {
+      column-gap: 16px;
+    }
+  }
+  &__contacts-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--beige);
+    @include laptop-min {
+      width: 32px;
+      height: 32px;
+    }
+    @include mobile {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &__nav-btn {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--beige);
+    background-color: white;
+    top: 20px;
+    right: 25px;
+    display: none;
+    &--close {
+      position: fixed;
+      z-index: 120;
+    }
+    @include laptop-min {
+      display: flex;
+    }
+    @include mobile {
+      width: 32px;
+      height: 32px;
+      &--close {
+        transform: translateY(-52px);
+        top: 14px;
+        right: 20px;
+        transition: transform 0.5s ease;
+        &.active {
+          transform: translateY(0);
+        }
+      }
+    }
+  }
+  &__nav-btn-icon {
+    width: 24px;
+    height: 24px;
+    @include mobile {
+      width: 16px;
+      height: 16px;
+    }
+  }
+  &__overlay {
+    @include mobile {
+      display: none;
+    }
+  }
+  &__nav {
+    @include laptop-min {
+      position: fixed;
+      overflow-y: auto;
+      max-width: 440px;
+      width: 100%;
+      padding: 90px 64px 64px 64px;
+      background-color: white;
+      transform: translateX(440px);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 110;
+      transition: transform 0.5s ease;
+      &.open {
+        transform: translateX(0);
+      }
+    }
+    @include mobile {
+      max-width: none;
+      transform: translateX(-100vw);
+      padding: 32px 20px;
+      top: 60px;
+      left: 0;
+      right: 0;
+    }
+  }
+  &__nav-list {
+    display: flex;
+    justify-content: right;
+    column-gap: 40px;
+    li {
+      &:last-child {
+        // добавляем бордер снизу у последнего элемента
+        a::before {
+          position: absolute;
+          content: "";
+          background-color: var(--beige);
+          height: 2px;
+          left: 0;
+          right: 0;
+          bottom: -6px;
+        }
+      }
+    }
+    button,
+    a {
+      position: relative;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+      &.active {
+        color: var(--beige);
+      }
+      @include hover {
+        color: var(--beige);
+      }
+    }
+    @include laptop {
+      column-gap: 25px;
+    }
+    @include laptop-min {
+      flex-direction: column;
+      row-gap: 40px;
+      button,
+      a {
+        font-size: 16px;
+        line-height: 120%;
+      }
+    }
+    @include mobile {
+      row-gap: 32px;
+    }
+  }
+  &__dropdown-list {
+    li {
+      &:not(:last-child) {
+        margin-bottom: 12px;
+      }
+      // убираем бордер снизу у последнего элемента
+      &:last-child {
+        a::before {
+          display: none;
+        }
+      }
+    }
+    a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 120%;
+      text-transform: none;
+      white-space: nowrap;
+    }
+  }
+  &__dropdown-btn-stroke {
+    position: relative;
+    display: inline-block;
+    margin-top: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    transition: color 0.2s ease;
+    &::before {
+      position: absolute;
+      content: "";
+      height: 2px;
+      background-color: var(--beige);
+      left: 0;
+      right: 0;
+      bottom: -6px;
+    }
+  }
+}
