@@ -1,0 +1,111 @@
+.approach {
+  padding: 120px 0px;
+  @include laptop-min {
+    padding: 105px 0px;
+  }
+  @include tablet {
+    padding: 80px 0px;
+  }
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;
+  }
+  &__title {
+    margin: 0;
+  }
+  &__info {
+    position: relative;
+    max-width: 710px;
+    @include laptop-min {
+      max-width: 535px;
+    }
+    @include tablet {
+      max-width: none;
+    }
+  }
+  &__icon {
+    position: absolute;
+    width: 35px;
+    height: 32px;
+    color: var(--beige);
+    top: -10px;
+    left: -50px;
+    @include laptop-min {
+      width: 27px;
+      height: 25px;
+      top: 0;
+      left: -40px;
+    }
+    @include tablet {
+      position: static;
+      width: 25px;
+      height: 20px;
+      margin-bottom: 10px;
+    }
+  }
+  &__content {
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0px 0px 40px 0px;
+    @include laptop-min {
+      font-size: 18px;
+      line-height: 140%;
+      margin-bottom: 30px;
+    }
+    @include mobile {
+      margin-bottom: 25px;
+    }
+  }
+  &__profile {
+    display: flex;
+    column-gap: 30px;
+    @include laptop-min {
+      column-gap: 25px;
+    }
+    @include mobile {
+      column-gap: 15px;
+    }
+  }
+  &__profile-avatar {
+    object-fit: cover;
+    border-radius: 50%;
+    @include laptop-min {
+      width: 105px;
+      height: 105px;
+    }
+    @include mobile {
+      width: 75px;
+      height: 75px;
+    }
+  }
+  &__profile-info {
+    max-width: 400px;
+    @include laptop-min {
+      max-width: 360px;
+    }
+    @include mobile {
+      max-width: calc(100% - 90px);
+    }
+  }
+  &__profile-name {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    margin: 0px 0px 12px 0px;
+    @include laptop-min {
+      font-size: 18px;
+    }
+  }
+  &__profile-content {
+    margin: 0;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-2);
+    @include laptop-min {
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+}
