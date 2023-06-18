@@ -27,3 +27,22 @@
     font-size: 14px;
   }
 }
+
+.btn-circle {
+  @include flex-center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--beige);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  @include hover {
+    background-color: var(--text-3);
+  }
+  &:active {
+    background-color: var(--beige-light);
+  }
+  @include laptop {
+    width: 56px;
+    height: 56px;
+  }
+}
