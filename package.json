@@ -54,7 +54,6 @@
 		"pug-loader": "latest",
 		"sass": "latest",
 		"sass-loader": "latest",
-		"smooth-scroll": "latest",
 		"string-replace-loader": "latest",
 		"style-loader": "latest",
 		"swiper": "^9.4.1",

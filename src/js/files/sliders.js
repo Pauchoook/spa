@@ -80,12 +80,28 @@ export default function sliders() {
       },
       breakpoints: {
         993: {
-          slidesPerView: 3
+          slidesPerView: 3,
         },
         577: {
-          slidesPerView: 2
-        }
-      }
+          slidesPerView: 2,
+        },
+      },
+    });
+  }
+
+  const resultsSlider = document.querySelector(".results__slider");
+
+  if (resultsSlider) {
+    const swiper = new Swiper(resultsSlider, {
+      speed: 700,
+      simulateTouch: false,
+      slidesPerView: 2,
+      spaceBetween: 15,
+      initialSlide: 2,
+      navigation: {
+        prevEl: " .results__slider-btn--prev",
+        nextEl: " .results__slider-btn--next",
+      },
     });
   }
 }

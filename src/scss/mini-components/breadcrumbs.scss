@@ -1,0 +1,29 @@
+.breadcrumbs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  padding-bottom: 40px;
+  li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    &:not(:last-child) {
+      &::after {
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 1px;
+        background-color: var(--text-4);
+        right: -27px;
+      }
+    }
+  }
+  a {
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-4);
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+}

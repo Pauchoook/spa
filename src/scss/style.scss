@@ -20,6 +20,8 @@
 @import "./mini-components/overlay";
 @import "./mini-components/slider-scrollbar";
 @import "./mini-components/form";
+@import "./mini-components/breadcrumbs";
+@import "./mini-components/tab";
 
 // components
 @import "./components/header";
@@ -34,5 +36,11 @@
 @import "./components/reviews";
 @import "./components/partners";
 @import "./components/contacts";
+@import "./components/procedure";
+@import "./components/detail-procedure";
+@import "./components/prices";
+@import "./components/results";
+@import "./components/we-use";
+@import "./components/answers";
 
 @import "./components/footer";

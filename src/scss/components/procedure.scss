@@ -1,0 +1,142 @@
+.procedure {
+  padding-bottom: 80px;
+  &__item {
+    padding: 40px;
+    background-color: white;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 120%;
+    margin: 0px 0px 50px 0px;
+  }
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  &__subtitle {
+    margin: 0px 20px 0px 0px;
+  }
+  &__price {
+    margin: 0;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 130%;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: right;
+    flex: 1;
+    gap: 15px;
+  }
+  &__btn {
+    display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    max-width: 330px;
+    width: 100%;
+  }
+  &__about-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__about-list {
+    max-width: 675px;
+  }
+  &__about-item {
+    display: flex;
+    column-gap: 15px;
+    font-size: 16px;
+    line-height: 150%;
+    color: var(--text-2);
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    ul {
+      list-style: disc;
+      padding-left: 35px;
+    }
+  }
+  &__about-item-title {
+    color: var(--text-4);
+    flex: 0 1 192px;
+  }
+  &__stock-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 25px;
+    border-top: 1px solid var(--beige);
+  }
+  &__img {
+    object-fit: cover;
+  }
+  &__stock-info {
+    max-width: 670px;
+  }
+  &__stock-title {
+    max-width: 570px;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin: 0px 0px 25px 0px;
+  }
+  &__stock-subtitle {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    color: var(--beige);
+    margin: 0px 0px 65px 0px;
+  }
+  &__stock-content {
+    font-size: 20px;
+    line-height: 150%;
+    margin: 0;
+  }
+  &__stock-tel {
+    margin: 10px 0px 30px 0px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    font-size: 20px;
+    line-height: 150%;
+    transition: color 0.2s ease;
+    @include hover {
+      color: var(--beige);
+    }
+  }
+  &__stock-tel-icon {
+    width: 25px;
+    height: 25px;
+    color: var(--beige);
+  }
+  &__form {
+    margin-top: 15px;
+  }
+  &__form-wrapper {
+    display: flex;
+    align-items: stretch;
+    column-gap: 12px;
+    margin-bottom: 15px;
+  }
+  &__form-item {
+    flex: 0 1 225px;
+    .form__input {
+      height: 100%;
+    }
+  }
+  &__form-btn {
+    flex: 1;
+  }
+  &__form-content {
+    margin: 0;
+    font-size: 14px;
+    line-height: 150%;
+    color: var(--text-4);
+  }
+}

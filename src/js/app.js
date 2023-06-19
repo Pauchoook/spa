@@ -8,6 +8,8 @@ import hoverImg from "./files/hover-img.js";
 import sliders from "./files/sliders.js";
 import { overflowTextMore } from "./files/overflow-text-more.js";
 import maps from "./files/maps.js";
+import smoothScroll from "./files/smooth-scroll.js";
+import tab from "./files/tab.js";
 
 functions.isWebp();
 functions.mediaAdaptive();
@@ -19,3 +21,5 @@ hoverImg();
 sliders();
 overflowTextMore();
 maps();
+smoothScroll();
+tab();
