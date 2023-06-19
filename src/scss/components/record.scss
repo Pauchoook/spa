@@ -1,0 +1,103 @@
+.record {
+  position: relative;
+  padding-bottom: 80px;
+  color: white;
+  z-index: 1;
+  @include laptop-min {
+    padding: 50px 0px 100px 0px;
+    margin-bottom: 65px;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: var(--text-2);
+      opacity: 0.64;
+      inset: 0;
+      z-index: -1;
+    }
+  }
+  @include tablet {
+    padding: 50px 0px 115px 0px;
+  }
+  &__body {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 48px 80px 48px 48px;
+    z-index: 1;
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: var(--text-2);
+      opacity: 0.64;
+      inset: 0;
+      z-index: -1;
+    }
+    @include laptop-min {
+      position: static;
+      padding: 0;
+    }
+    @include tablet {
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+  }
+  &__bg {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: -2;
+  }
+  &__title {
+    margin: 0;
+    color: inherit;
+    @include laptop-min {
+      max-width: 120px;
+    }
+    @include tablet {
+      max-width: none;
+    }
+  }
+  &__info {
+    max-width: 630px;
+    @include laptop-min {
+      max-width: 535px;
+    }
+  }
+  &__content {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 130%;
+    margin: 0px 0px 40px 0px;
+    @include laptop-min {
+      margin-bottom: 30px;
+      font-size: 18px;
+      line-height: 130%;
+    }
+  }
+  &__subcontent {
+    font-size: 16px;
+    line-height: 150%;
+    margin: 0px 0px 15px 0px;
+    @include laptop-min {
+      font-size: 14px;
+    }
+  }
+  &__buttons {
+    display: flex;
+    column-gap: 15px;
+    row-gap: 12px;
+    @include mobile-min {
+      flex-direction: column;
+    }
+  }
+  &__btn {
+    display: inline-block;
+    text-align: center;
+    @include mobile-min {
+      width: 100%;
+    }
+  }
+}

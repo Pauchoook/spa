@@ -18,6 +18,8 @@
 // mini-components
 @import "./mini-components/dropdown";
 @import "./mini-components/overlay";
+@import "./mini-components/slider-scrollbar";
+@import "./mini-components/form";
 
 // components
 @import "./components/header";
@@ -27,5 +29,10 @@
 @import "./components/about";
 @import "./components/approach";
 @import "./components/specialists";
+@import "./components/record";
+@import "./components/products";
+@import "./components/reviews";
+@import "./components/partners";
+@import "./components/contacts";
 
 @import "./components/footer";

@@ -6,6 +6,8 @@ import burger from "./files/burger.js";
 import spoller from "./files/spoller.js";
 import hoverImg from "./files/hover-img.js";
 import sliders from "./files/sliders.js";
+import { overflowTextMore } from "./files/overflow-text-more.js";
+import maps from "./files/maps.js";
 
 functions.isWebp();
 functions.mediaAdaptive();
@@ -15,3 +17,5 @@ burger();
 spoller();
 hoverImg();
 sliders();
+overflowTextMore();
+maps();

@@ -33,16 +33,59 @@ export default function sliders() {
       grabCursor: true,
       slidesPerView: "auto",
       spaceBetween: 10,
-      initialSlide: 1,
       scrollbar: {
         el: ".specialists__slider-scrollbar",
-        draggable: true 
+        draggable: true,
       },
       breakpoints: {
         993: {
           spaceBetween: 16,
         },
       },
+    });
+  }
+
+  const productsSliders = document.querySelectorAll(".products__slider");
+  if (productsSliders.length) {
+    productsSliders.forEach((s) => {
+      const scrollbar = s.querySelector(".slider-scrollbar");
+      const swiper = new Swiper(s, {
+        speed: 700,
+        grabCursor: true,
+        slidesPerView: "auto",
+        spaceBetween: 10,
+        scrollbar: {
+          el: scrollbar,
+          draggable: true,
+        },
+        breakpoints: {
+          993: {
+            spaceBetween: 16,
+          },
+        },
+      });
+    });
+  }
+
+  const reviewsSlider = document.querySelector(".reviews__slider");
+
+  if (reviewsSlider) {
+    const swiper = new Swiper(reviewsSlider, {
+      speed: 700,
+      grabCursor: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: " .reviews__slider-btn--next",
+      },
+      breakpoints: {
+        993: {
+          slidesPerView: 3
+        },
+        577: {
+          slidesPerView: 2
+        }
+      }
     });
   }
 }

@@ -1,7 +1,7 @@
 :root {
-  --content-width: 1230px;
+  --content-container-width: 1230px;
   --offset-width: 30px;
-  --container-width: calc(var(--content-width) + (var(--offset-width) * 2));
+  --container-width: calc(var(--content-container-width) + (var(--offset-width) * 2));
 }
 
 .container {

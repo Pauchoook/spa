@@ -85,12 +85,4 @@
       max-width: calc(100% - 40px);
     }
   }
-  &__slider-scrollbar {
-    cursor: pointer;
-    height: 2px;
-    background-color: rgb(174, 153, 141, 0.4);
-    .swiper-scrollbar-drag {
-      background-color: var(--text-2);
-    }
-  }
 }
