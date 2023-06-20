@@ -54,12 +54,12 @@
     visibility: hidden;
     opacity: 0;
     z-index: 10;
+    left: -24px;
     transition: visibility 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
   }
   &__body {
     background-color: white;
     width: fit-content;
     padding: 24px;
-    left: 0;
   }
 }

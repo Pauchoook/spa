@@ -93,8 +93,10 @@
     }
   }
   &__btn-icon {
+    position: relative;
     width: 20px;
     height: 20px;
+    top: 7px;
     transition: transform 0.2s ease;
     @include laptop-min {
       width: 16px;

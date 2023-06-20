@@ -7,9 +7,6 @@
   @include tablet {
     padding-top: 80px;
   }
-  &__title {
-    margin: 0px 0px 40px 0px;
-  }
   &__header {
     margin-bottom: 50px;
     @include laptop-min {
@@ -21,6 +18,12 @@
     }
     @include mobile {
       margin-bottom: 25px;
+    }
+  }
+  &__title {
+    margin: 0px 0px 40px 0px;
+    @include tablet {
+      margin: 0;
     }
   }
   &__header-wrapper {

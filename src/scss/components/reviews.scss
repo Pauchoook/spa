@@ -36,6 +36,9 @@
   }
   &__slide {
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 336px;
     padding: 32px;
     background-color: white;
     @include laptop {
@@ -69,6 +72,7 @@
   }
   &__slide-content {
     @include overflow-text(6);
+    flex: 1;
     margin: 0;
     font-size: 16px;
     line-height: 150%;

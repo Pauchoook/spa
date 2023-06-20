@@ -1,22 +1,23 @@
 export default function smoothScroll() {
-  document.querySelectorAll('a[href^="#"').forEach(link => {
+  document.querySelectorAll('a[href^="#"').forEach((link) => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
 
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
+      let href = this.getAttribute("href").substring(1);
 
-        let href = this.getAttribute('href').substring(1);
+      const scrollTarget = document.getElementById(href);
+      console.log(scrollTarget)
 
-        const scrollTarget = document.getElementById(href);
-
-        const topOffset = document.querySelector('.header').clientHeight + 20;
-        // const topOffset = 0; // если не нужен отступ сверху 
+      if (scrollTarget) {
+        const topOffset = document.querySelector(".header").clientHeight + 20;
         const elementPosition = scrollTarget.getBoundingClientRect().top;
         const offsetPosition = elementPosition - topOffset;
 
         window.scrollBy({
-            top: offsetPosition,
-            behavior: 'smooth'
+          top: offsetPosition,
+          behavior: "smooth",
         });
+      }
     });
-});
+  });
 }
