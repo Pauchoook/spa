@@ -50,15 +50,15 @@
         </svg>
       </button>
       <div class="overlay header__overlay" id="burger-overlay"></div>
-      <nav data-one-spoller class="header__nav" id="burger-menu">
+      <nav class="header__nav" id="burger-menu">
         <button data-da=".header__right, 576, 2" class="btn header__nav-btn header__nav-btn--close" id="burger-close">
           <svg class="header__nav-btn-icon">
             <use xlink:href="img/icons/icons.svg#svg-close"></use>
           </svg>
         </button>
-        <ul class="list header__nav-list">
+        <ul data-spollers="992, max" data-one-spoller class="list header__nav-list">
           <li class="dropdown _media-spoller">
-            <button class="btn dropdown__btn">
+            <button data-spoller class="btn dropdown__btn">
               О центре
               <svg class="dropdown__icon">
                 <use xlink:href="img/icons/icons.svg#svg-arrow"></use>
@@ -93,7 +93,7 @@
             </div>
           </li>
           <li class="dropdown _media-spoller">
-            <button class="btn dropdown__btn">
+            <button data-spoller class="btn dropdown__btn">
               Услуги и цены
               <svg class="dropdown__icon">
                 <use xlink:href="img/icons/icons.svg#svg-arrow"></use>

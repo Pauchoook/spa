@@ -14,13 +14,6 @@
     }
   }
   @include laptop-min {
-    &.open {
-      &._media-spoller {
-        .dropdown__item {
-          max-height: 1000px;
-        }
-      }
-    }
     &._media-spoller {
       .dropdown__body {
         background-color: transparent;
@@ -31,10 +24,6 @@
         transform: translateY(0);
         opacity: 1;
         visibility: visible;
-        overflow: hidden;
-        height: 100%;
-        max-height: 0px;
-        transition: max-height 0.5s ease, padding 0.5s ease;
       }
     }
   }
@@ -44,6 +33,7 @@
     column-gap: 8px;
   }
   &__icon {
+    pointer-events: none;
     width: 12px;
     height: 12px;
     transition: transform 0.2s ease;
