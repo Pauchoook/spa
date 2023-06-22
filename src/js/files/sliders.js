@@ -95,7 +95,7 @@ export default function sliders() {
     const swiper = new Swiper(resultsSlider, {
       speed: 700,
       simulateTouch: false,
-      slidesPerView: 2,
+      // slidesPerView: 2,
       spaceBetween: 15,
       initialSlide: 2,
       navigation: {

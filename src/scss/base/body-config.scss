@@ -10,4 +10,10 @@
 
 .main {
   padding-top: 140px;
+  @include laptop-min {
+    padding-top: 120px;
+  }
+  @include mobile {
+    padding-top: 100px;
+  }
 }

@@ -3,6 +3,10 @@
   flex-wrap: wrap;
   column-gap: 40px;
   padding-bottom: 40px;
+  @include laptop-min {
+    padding-bottom: 15px;
+    column-gap: 30px;
+  }
   li {
     position: relative;
     display: flex;
@@ -24,6 +28,18 @@
     color: var(--text-4);
     @include hover {
       text-decoration: underline;
+    }
+  }
+  @include laptop-min {
+    li {
+      &:not(:last-child) {
+        &::after {
+          right: -24px;
+        }
+      }
+    }
+    a {
+      font-size: 14px;
     }
   }
 }

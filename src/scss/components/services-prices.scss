@@ -5,29 +5,167 @@
     font-size: 40px;
     line-height: 120%;
     margin: 0px 0px 30px 0px;
+    @include laptop-min {
+      font-size: 32px;
+      line-height: 120%;
+    }
   }
   &__wrapper {
     display: flex;
     gap: 15px;
+    @include laptop-min {
+      flex-direction: column;
+    }
   }
   &__sidebar {
     position: sticky;
     background-color: white;
     padding: 30px 40px;
     height: fit-content;
-    overflow-y: auto;
     top: 110px;
+    @include desktop {
+      padding: 30px;
+    }
+    @include laptop-min {
+      position: relative;
+      padding: 40px;
+      width: 100%;
+      top: 0;
+      z-index: 1;
+      &::before {
+        position: absolute;
+        content: "";
+        background-color:white;
+        top: 0;
+        right: -20px;
+        bottom: 0;
+        left: -20px;
+        z-index: -1;
+      }
+    }
+    @include mobile {
+      padding: 32px 0px;
+      background: none;
+    }
+  }
+  &__nav-modal {
+    display: none;
+    @include laptop-min {
+      display: block;
+    }
+  }
+  &__nav-modal-title {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    margin: 0px 0px 15px 0px;
+  }
+  &__btn-modal {
+    @include flex-between;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid var(--beige);
+    color: var(--text-2);
+    font-size: 14px;
+    line-height: 150%;
+    text-transform: uppercase;
+    transform: color 0.2s ease;
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+    span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: calc(100% - 30px);
+    }
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+  &__btn-modal-icon {
+    width: 18px;
+    height: 18px;
+    transform: rotate(-90deg);
+  }
+  &__modal {
+    --bg-overlay: transparent;
+    .modal__overlay,
+    .modal__window {
+      opacity: 1;
+      z-index: 10;
+    }
+    .modal__overlay {
+      position: relative;
+      background-color: transparent;
+      visibility: visible;
+    }
+    .modal__window {
+      padding: 0;
+      transform: translateY(0);
+      margin-top: 0;
+    }
+    @include laptop-min {
+      --bg-overlay: rgb(37, 37, 37, 0.4);
+      .modal__overlay,
+      .modal__window {
+        opacity: 0;
+        z-index: -10;
+      }
+      .modal__overlay {
+        position: fixed;
+        visibility: hidden;
+      }
+      .modal__window {
+        max-width: 535px;
+        width: 100%;
+        margin-top: 20px;
+        padding: 24px;
+        transform: translateY(-1000px);
+      }
+    }
+    @include mobile {
+      .modal__window {
+        max-width: calc(100vw - 40px);
+      }
+    }
+  }
+  &__modal-close {
+    display: none;
+    @include laptop-min {
+      display: block;
+    }
+  }
+  &__modal-title {
+    font-weight: 400;
+    display: none;
+    color: var(--text-1);
+    font-size: 18px;
+    line-height: 140%;
+    margin: 0px 0px 25px 0px;
+    @include laptop-min {
+      display: block;
+    }
   }
   &__sidebar-list {
+    max-width: 320px;
+    @include laptop-min {
+      max-width: none;
+    }
   }
   &__sidebar-item {
     position: relative;
-    max-width: 320px;
     &:not(:last-child) {
       margin-bottom: 25px;
     }
+    @include laptop-min {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
   &__sidebar-item-btn {
+    display: inline-block;
     text-align: left;
     font-size: 16px;
     line-height: 150%;
@@ -55,6 +193,13 @@
     @include hover {
       color: var(--beige);
     }
+    @include laptop-min {
+      font-size: 14px;
+      &.active,
+      &._spoller-active {
+        font-weight: 600;
+      }
+    }
   }
   &__sidebar-sublist {
     padding: 10px 0px 0px 20px;
@@ -76,13 +221,34 @@
     }
   }
   &__tab {
+    position: relative;
     flex: 1;
     background-color: white;
     padding: 32px 40px;
+    z-index: 1;
+    @include mobile {
+      padding-right: 0;
+      padding-left: 0;
+      &::before {
+        position: absolute;
+        content: "";
+        background-color: white;
+        left: -20px;
+        right: -20px;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+      }
+    }
   }
   &__tab-item {
     &:not(:last-child) {
       margin-bottom: 55px;
+    }
+    @include laptop-min {
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
     }
   }
   &__tab-title {
@@ -90,6 +256,9 @@
     font-size: 24px;
     line-height: 150%;
     margin: 0px 0px 15px 0px;
+    @include laptop-min {
+      font-size: 18px;
+    }
   }
   &__tab-more {
     display: flex;
@@ -105,10 +274,14 @@
     @include hover {
       color: var(--beige);
     }
+    @include laptop-min {
+      font-size: 12px;
+      margin-bottom: 25px;
+    }
   }
   &__tab-more-icon {
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     transform: rotate(45deg);
   }
   &__tab-list {
@@ -116,34 +289,55 @@
   &__tab-list-item {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 15px;
+    row-gap: 8px;
     padding-top: 10px;
     border-top: 1px solid rgb(174, 153, 141, 0.4);
     &:not(:last-child) {
       margin-bottom: 25px;
     }
-  }
-  &__tab-list-info {
-    flex: 0 1 560px;
-    padding-right: 15px;
+    @include mobile {
+      justify-content: start;
+    }
   }
   &__tab-list-title {
     margin: 0;
+    flex: 0 1 560px;
     font-size: 16px;
     line-height: 150%;
+    @include laptop-min {
+      flex-basis: 500px;
+      font-size: 14px;
+    }
   }
   &__tab-list-point {
     display: inline-block;
-    margin-top: 10px;
     padding: 6px 8px;
     font-weight: 600;
     font-size: 10px;
     line-height: 130%;
     text-transform: uppercase;
+    height: fit-content;
     background-color: rgba(174, 153, 141, 0.24);
+    @include laptop-min {
+      font-size: 8px;
+    }
   }
   &__tab-list-price {
     font-weight: 500;
     font-size: 20px;
     line-height: 130%;
+    @include laptop-min {
+      font-size: 18px;
+    }
+  }
+  &__tab-content {
+    font-size: 14px;
+    line-height: 130%;
+    color: var(--beige);
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }

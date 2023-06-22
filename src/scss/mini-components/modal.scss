@@ -1,0 +1,88 @@
+.modal {
+  --bg-overlay: rgb(37, 37, 37, 0.4);
+  --bg-overlay-hide: rgba(37, 37, 37, 0);
+  &.open {
+    .modal__overlay,
+    .modal__window {
+      opacity: 1;
+      z-index: 1000;
+    }
+    .modal__overlay {
+      background-color: var(--bg-overlay);
+      overflow-y: auto;
+      visibility: visible;
+    }
+    .modal__window {
+      transform: translateY(0);
+    }
+  }
+  &.hide {
+    .modal__overlay,
+    .modal__window {
+      opacity: 1;
+      z-index: 1000;
+    }
+    .modal__overlay {
+      background-color: var(--bg-overlay-hide);
+    }
+    .modal__window {
+      transform: translateY(-1000px);
+    }
+  }
+  &__overlay,
+  &__window {
+    opacity: 0;
+    z-index: -10;
+  }
+  &__overlay {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    overflow-y: auto;
+    inset: 0;
+    background-color: var(--bg-overlay);
+    visibility: hidden;
+    transition: background-color 0.5s ease, visibility 0.5s ease;
+    &::-webkit-scrollbar {
+      height: 0;
+      width: 0;
+      display: none;
+    }
+  }
+  &__window {
+    position: relative;
+    background-color: white;
+    padding: 24px;
+    transform: translateY(-1000px);
+    opacity: 0;
+    height: fit-content;
+    margin-top: 50px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    @include laptop-min {
+      padding: 50px 45px;
+    }
+    @include tablet {
+      max-width: 80%;
+    }
+    @include mobile {
+      max-width: 90%;
+      padding: 40px 15px
+    }
+  }
+  &__close {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    color: var(--peach-4);
+    right: 15px;
+    top: 15px;
+    transition: opacity 0.2s ease;
+    @include hover {
+      opacity: 0.6;
+    }
+  }
+  &__close-icon {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -10,6 +10,7 @@ import { overflowTextMore } from "./files/overflow-text-more.js";
 import maps from "./files/maps.js";
 import smoothScroll from "./files/smooth-scroll.js";
 import tab from "./files/tab.js";
+import modal from "./files/modal.js";
 
 functions.isWebp();
 functions.mediaAdaptive();
@@ -23,3 +24,4 @@ overflowTextMore();
 maps();
 smoothScroll();
 tab();
+modal();

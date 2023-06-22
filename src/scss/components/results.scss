@@ -10,15 +10,17 @@
     margin: 0 auto;
   }
   &__slide {
+    display: flex;
+    column-gap: 16px;
     height: 400px;
     opacity: 0.24;
     transition: opacity .2s ease;
-    &.swiper-slide-active, &.swiper-slide-next {
+    &.swiper-slide-active {
       opacity: 1;
     }
   }
   &__slide-img {
-    width: 100%;
+    width: calc(50% - 8px);
     height: 100%;
     object-fit: cover;
   }
