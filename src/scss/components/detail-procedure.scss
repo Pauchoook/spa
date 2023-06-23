@@ -3,23 +3,48 @@
   &__container {
     display: flex;
     justify-content: space-between;
+    gap: 30px;
+    @include tablet {
+      flex-direction: column;
+    }
   }
   &__title {
     margin: 0;
+    @include laptop {
+      max-width: 170px;
+    }
+    @include tablet {
+      max-width: none;
+    }
   }
   &__info {
     max-width: 715px;
+    @include laptop-min {
+      max-width: none;
+      flex: 1;
+    }
+    @include tablet {
+      flex: auto;
+    }
   }
   &__info-title {
     font-weight: 400;
     font-size: 24px;
     line-height: 150%;
     margin: 0px 0px 30px 0px;
+    @include laptop-min {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
   }
   &__info-content {
     font-size: 16px;
     line-height: 150%;
     margin: 0px 0px 30px 0px;
+    @include laptop-min {
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
   }
   &__btn-more {
     position: relative;
@@ -27,7 +52,7 @@
     font-size: 14px;
     line-height: 120%;
     text-transform: uppercase;
-    transition: color .2s ease;
+    transition: color 0.2s ease;
     &::before {
       position: absolute;
       content: "";

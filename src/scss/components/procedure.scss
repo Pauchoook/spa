@@ -1,10 +1,32 @@
 .procedure {
   padding-bottom: 80px;
   &__item {
+    position: relative;
     padding: 40px;
     background-color: white;
+    z-index: 1;
     &:not(:last-child) {
       margin-bottom: 15px;
+    }
+    @include laptop-min {
+      padding-right: 0;
+      padding-left: 0;
+      &::before {
+        position: absolute;
+        content: "";
+        left: -25px;
+        right: -25px;
+        top: 0;
+        bottom: 0;
+        background-color: white;
+        z-index: -1;
+      }
+    }
+    @include tablet {
+      &::before {
+        left: -20px;
+        right: -20px;
+      }
     }
   }
   &__title {
@@ -12,26 +34,62 @@
     font-size: 40px;
     line-height: 120%;
     margin: 0px 0px 50px 0px;
+    @include laptop-min {
+      font-size: 32px;
+      margin-bottom: 40px;
+    }
+    @include mobile {
+      margin-bottom: 30px;
+    }
   }
   &__wrapper {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
+    @include laptop-min {
+      justify-content: space-between;
+      align-items: start;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
   }
   &__subtitle {
     margin: 0px 20px 0px 0px;
+    @include laptop-min {
+      margin-right: 0;
+    }
+    @include mobile {
+      margin-bottom: 5px;
+    }
   }
   &__price {
     margin: 0;
     font-weight: 600;
     font-size: 32px;
     line-height: 130%;
+    @include laptop-min {
+      font-size: 24px;
+      transform: translateY(-10px);
+    }
+    @include mobile {
+      transform: translateY(0);
+      margin-bottom: 25px;
+    }
   }
   &__buttons {
     display: flex;
     justify-content: right;
     flex: 1;
     gap: 15px;
+    @include laptop-min {
+      flex-direction: column;
+      row-gap: 10px;
+      flex: auto;
+    }
+    @include mobile-min {
+      width: 100%;
+    }
   }
   &__btn {
     display: inline-block;
@@ -39,13 +97,27 @@
     white-space: nowrap;
     max-width: 330px;
     width: 100%;
+    @include laptop-min {
+      max-width: 310px;
+    }
+    @include mobile {
+      max-width: 330px;
+    }
+    @include mobile-min {
+      max-width: none;
+    }
   }
   &__about-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
   }
   &__about-list {
     max-width: 675px;
+    @include laptop-min {
+      max-width: 535px;
+    }
   }
   &__about-item {
     display: flex;
@@ -58,25 +130,62 @@
     }
     ul {
       list-style: disc;
-      padding-left: 35px;
+      padding-left: 25px;
+    }
+    @include laptop-min {
+      font-size: 14px;
+    }
+    @include mobile {
+      flex-direction: column;
+      row-gap: 5px;
     }
   }
   &__about-item-title {
     color: var(--text-4);
-    flex: 0 1 192px;
+    flex: 0 0 192px;
+    @include laptop-min {
+      flex-basis: 170px;
+    }
+    @include mobile {
+      flex: auto;
+    }
   }
   &__stock-wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
     margin-top: 10px;
     padding-top: 25px;
     border-top: 1px solid var(--beige);
+    @include tablet {
+      padding-top: 15px;
+    }
   }
   &__img {
     object-fit: cover;
+    @include laptop-min {
+      width: 320px;
+      height: 320px;
+    }
+    @include tablet {
+      margin: 0 auto;
+    }
   }
   &__stock-info {
     max-width: 670px;
+    @include desktop {
+      max-width: 535px;
+    }
+    @include laptop {
+      max-width: 430px;
+    }
+    @include laptop-min {
+      max-width: 350px;
+    }
+    @include tablet {
+      max-width: none;
+    }
   }
   &__stock-title {
     max-width: 570px;
@@ -85,6 +194,10 @@
     line-height: 120%;
     text-transform: uppercase;
     margin: 0px 0px 25px 0px;
+    @include laptop-min {
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
   }
   &__stock-subtitle {
     font-weight: 500;
@@ -92,11 +205,19 @@
     line-height: 130%;
     color: var(--beige);
     margin: 0px 0px 65px 0px;
+    @include laptop-min {
+      font-weight: 400;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
   }
   &__stock-content {
     font-size: 20px;
     line-height: 150%;
     margin: 0;
+    @include laptop-min {
+      font-size: 16px;
+    }
   }
   &__stock-tel {
     margin: 10px 0px 30px 0px;
@@ -109,6 +230,10 @@
     @include hover {
       color: var(--beige);
     }
+    @include laptop-min {
+      font-size: 16px;
+      margin-bottom: 25px;
+    }
   }
   &__stock-tel-icon {
     width: 25px;
@@ -117,26 +242,45 @@
   }
   &__form {
     margin-top: 15px;
+    @include tablet {
+      max-width: 450px;
+    }
   }
   &__form-wrapper {
     display: flex;
     align-items: stretch;
-    column-gap: 12px;
+    gap: 12px;
     margin-bottom: 15px;
+    @include desktop {
+      flex-direction: column;
+    }
   }
   &__form-item {
     flex: 0 1 225px;
     .form__input {
       height: 100%;
     }
+    @include desktop {
+      flex: auto;
+      width: 100%;
+    }
   }
   &__form-btn {
     flex: 1;
+    @include desktop {
+      flex: auto;
+      width: 100%;
+      padding-top: 13px;
+      padding-bottom: 13px;
+    }
   }
   &__form-content {
     margin: 0;
     font-size: 14px;
     line-height: 150%;
     color: var(--text-4);
+    @include tablet {
+      font-size: 12px;
+    }
   }
 }
