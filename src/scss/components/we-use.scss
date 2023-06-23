@@ -2,12 +2,20 @@
   background-color: white;
   padding: 80px 0px;
   margin-bottom: 80px;
+  @include tablet {
+    padding: 55px 0px;
+  }
   &__title {
     margin: 0px 0px 40px 0px;
+    @include laptop-min {
+      margin-bottom: 30px;
+    }
   }
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 25px;
   }
   &__content {
     margin: 0;
@@ -15,17 +23,36 @@
     font-weight: 500;
     font-size: 20px;
     line-height: 130%;
+    @include laptop-min {
+      max-width: 535px;
+      font-size: 18px;
+    }
   }
   &__gallery {
     max-width: 710px;
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     gap: 15px;
+    @include laptop-min {
+      margin: 0 auto;
+      max-width: 720px;
+    }
+    @include mobile {
+      gap: 16px;
+    }
   }
   &__gallery-img {
-    width: 225px;
+    width: calc(100% / 3 - 10px);
     height: 135px;
     object-fit: cover;
+    @include laptop-min {
+      height: 140px;
+    }
+    @include mobile {
+      width: calc(50% - 8px);
+    }
+    @include mobile-min {
+      height: 90px;
+    }
   }
 }

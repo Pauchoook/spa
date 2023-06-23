@@ -35,7 +35,7 @@
       &::before {
         position: absolute;
         content: "";
-        background-color:white;
+        background-color: white;
         top: 0;
         right: -20px;
         bottom: 0;
@@ -205,20 +205,41 @@
     padding: 10px 0px 0px 20px;
   }
   &__sidebar-subitem {
+    position: relative;
     cursor: pointer;
     font-weight: 500;
     font-size: 14px;
     line-height: 150%;
-    transition: color 0.2s ease;
+    transition: color 0.2s ease, padding-left 0.2s ease;
+    z-index: 1;
     &:not(:last-child) {
       margin-bottom: 15px;
     }
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: var(--beige);
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 4px;
+      opacity: 0;
+      visibility: hidden;
+      z-index: -1;
+    }
     &.active {
       color: var(--text-3);
+      padding-left: 16px;
+      &::before {
+        visibility: visible;
+        opacity: 1;
+      }
     }
     @include hover {
       color: var(--text-3);
     }
+  }
+  &__sidebar-anchor {
   }
   &__tab {
     position: relative;

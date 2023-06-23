@@ -95,13 +95,21 @@ export default function sliders() {
     const swiper = new Swiper(resultsSlider, {
       speed: 700,
       simulateTouch: false,
-      // slidesPerView: 2,
-      spaceBetween: 15,
+      spaceBetween: 6,
       initialSlide: 2,
       navigation: {
         prevEl: " .results__slider-btn--prev",
         nextEl: " .results__slider-btn--next",
       },
+      centeredSlides: true,
+      breakpoints: {
+        1100: {
+          spaceBetween: 16,
+        },
+        577: {
+          centeredSlides: false
+        }
+      }
     });
   }
 }
